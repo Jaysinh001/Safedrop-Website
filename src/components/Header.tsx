@@ -15,7 +15,7 @@ const Header = () => {
             <div className="bg-blue-600 rounded-lg ">
               {/* <Shield className="h-6 w-6 text-white" /> */}
 
-              <img src='public/safedrop_logo_white.png' className="h-10 w-10 text-white"></img>
+              <img src='/safedrop_logo_white.png' className="h-10 w-10 text-white"></img>
             </div>
             <span className="text-2xl font-bold text-gray-900">Safe Drop</span>
           </Link>

@@ -12,8 +12,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-blue-600 rounded-lg p-2">
-              <Shield className="h-6 w-6 text-white" />
+            <div className="bg-blue-600 rounded-lg ">
+              {/* <Shield className="h-6 w-6 text-white" /> */}
+
+              <img src='public/safedrop_logo_white.png' className="h-10 w-10 text-white"></img>
             </div>
             <span className="text-2xl font-bold text-gray-900">Safe Drop</span>
           </Link>
@@ -25,7 +27,7 @@ const Header = () => {
               <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 transition-colors">How It Works</a>
               <a href="#safety" className="text-gray-600 hover:text-blue-600 transition-colors">Safety</a>
               <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</Link>
-              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
             </div>
           </nav>
 
@@ -49,7 +51,7 @@ const Header = () => {
               <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 transition-colors">How It Works</a>
               <a href="#safety" className="text-gray-600 hover:text-blue-600 transition-colors">Safety</a>
               <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</Link>
-              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
             </nav>
           </div>
         )}

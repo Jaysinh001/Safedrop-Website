@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Menu, X, Shield, MapPin, MessageCircle, CreditCard } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Menu, X, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -11,30 +11,26 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="bg-blue-600 rounded-lg p-2">
               <Shield className="h-6 w-6 text-white" />
             </div>
             <span className="text-2xl font-bold text-gray-900">Safe Drop</span>
-          </div>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
-            <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 transition-colors">How It Works</a>
-            <a href="#safety" className="text-gray-600 hover:text-blue-600 transition-colors">Safety</a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex items-center space-x-8">
+              <a href="#features" className="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
+              <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 transition-colors">How It Works</a>
+              <a href="#safety" className="text-gray-600 hover:text-blue-600 transition-colors">Safety</a>
+              <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</Link>
+              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50">
-              Sign In
-            </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Get Started
-            </Button>
-          </div>
+          {/* Spacer for centering (matches logo width) */}
+          <div className="hidden md:block w-48"></div>
 
           {/* Mobile Menu Button */}
           <button
@@ -52,15 +48,8 @@ const Header = () => {
               <a href="#features" className="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
               <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 transition-colors">How It Works</a>
               <a href="#safety" className="text-gray-600 hover:text-blue-600 transition-colors">Safety</a>
+              <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</Link>
               <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
-              <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50">
-                  Sign In
-                </Button>
-                <Button className="bg-blue-600 hover:bg-blue-700">
-                  Get Started
-                </Button>
-              </div>
             </nav>
           </div>
         )}

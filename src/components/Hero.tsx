@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { ArrowRight, Play, Star } from 'lucide-react';
+import { ArrowRight, Play, Star, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ComingSoonAlert from './ComingSoonAlert';
+import VideoPopup from './VideoPopup';
+import ScheduleDemo from './ScheduleDemo';
 
 const Hero = () => {
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertTitle, setAlertTitle] = useState('');
+  const [showVideo, setShowVideo] = useState(false);
+  const [showScheduleDemo, setShowScheduleDemo] = useState(false);
 
-  const handleDemoClick = (title: string) => {
-    setAlertTitle(title);
-    setShowAlert(true);
+  const handleDemoClick = () => {
+    setShowVideo(true);
+  };
+
+  const handleScheduleDemoClick = () => {
+    setShowScheduleDemo(true);
   };
 
   return (
@@ -47,10 +51,21 @@ const Hero = () => {
                   size="lg" 
                   variant="outline" 
                   className="text-lg px-8 py-4 border-gray-300"
-                  onClick={() => handleDemoClick('Watch Demo')}
+                  onClick={handleScheduleDemoClick}
                 >
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Schedule Demo
+                </Button>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <Button 
+                  variant="ghost" 
+                  className="text-blue-600 hover:text-blue-700 hover:bg-blue-50"
+                  onClick={handleDemoClick}
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  Watch Demo Video
                 </Button>
               </div>
 
@@ -108,10 +123,16 @@ const Hero = () => {
         </div>
       </section>
 
-      <ComingSoonAlert
-        isOpen={showAlert}
-        onClose={() => setShowAlert(false)}
-        title={alertTitle}
+      <VideoPopup
+        isOpen={showVideo}
+        onClose={() => setShowVideo(false)}
+        videoUrl="https://youtu.be/MXVA8Wl0bNw"
+        title="Safe Drop Demo"
+      />
+
+      <ScheduleDemo
+        isOpen={showScheduleDemo}
+        onClose={() => setShowScheduleDemo(false)}
       />
     </>
   );
